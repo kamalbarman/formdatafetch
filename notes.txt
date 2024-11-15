@@ -1,0 +1,24 @@
+javascript
+const express = require("express");
+const path = require("path");
+const app = express();
+const port = 3000;
+
+app.get("/form", (req, res) => {
+    console.log("its a get request");
+    res.sendFile("form.html", { root: path.join(__dirname, "public") });
+});
+
+app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
+});
+
+
+
+
+Explanation:
+path.join(__dirname, "public"): This constructs the absolute path to the public directory.
+
+{ root: path.join(__dirname, "public") }: This specifies the root directory for sendFile to find the file.
+
+This should resolve the syntax error and correctly serve your form.html file from the public directory. Let me know if you encounter any more issues or need further assistance!

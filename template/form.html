@@ -24,8 +24,13 @@
             <input type="submit" name="button" value="Submit" class="submit-btn">
         </form>
     </div>
-    
-    </div>
-
+    <script>
+        async function testPost(){
+            let a = await fetch("/", {method: "POST"})
+            let b = await a.text()
+            console.log(b)
+        }
+        testPost()
+    </script>
 </body>
 </html>
